@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimum-scale=1.0, width=device-width" />
+    <style>
+
+        * {
+            font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+            font-size: x-large;
+        }
+
+        #boku {
+            margin: auto;
+            padding: auto;
+            width: 300px;
+            height: 150px;
+            background-color: red;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 150px;
+        }
+
+    </style>
+
+    <script>
+
+        var popupWindow;
+
+        onBokuClick = function() {
+            popupWindow = window.open('boku.html', '_blank');
+        }
+
+        window.addEventListener('message', function(e) {
+            if (e.data && e.data.type === 'bd-payment-result' && e.source === popupWindow) {
+                if (e.data) {
+                    alert(JSON.stringify(e.data))
+                }
+                else {
+                    alert('payment failed');
+                }
+            }
+            else {
+                alert('recieved random post message ' + (e && e.data));
+            }
+        });
+
+    </script>
+
+</head>
+<body>
+    <img src="badoo-logo.png">
+
+    <div id="boku" onclick="onBokuClick()">Make Payment with Boku</div>
+</body>
+</html>

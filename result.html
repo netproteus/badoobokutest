@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    // Returns params from a query string
+    var parseParams = function (qs) {
+        var result = {};
+        qs = qs.split('+').join(' ');
+
+        var tokens;
+        var re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            result[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+        }
+
+        return result;
+    };
+
+    var params = parseParams(window.location.search);
+
+    if (window.opener && typeof window.opener.postMessage === 'function') {
+        window.opener.postMessage({
+            type:'bd-payment-result',
+            data: params
+        }, window.location.origin);
+    }
+
+    setTimeout(function () {
+        window.close();
+    }, 1000);
+</script>
+
+
+This page should be opened in the popup not the main window
+
+
+
+</body>
+</html>
