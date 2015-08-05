@@ -25,7 +25,9 @@
 
     <script>
 
-        var orgurl = undefined;
+        // Set this to the origin to be the same as the opener window, probably has to be done at transaction setup
+        // time as you won't be able to read it from the window and we have different domains
+        var orgurl = 'http://netproteus.com';
         var callBackUrl = window.location.origin + '/boku-test' + '/result.html?paymentId=1&type=boku';
 
         function onHandlerClick() {
