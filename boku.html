@@ -29,15 +29,15 @@
         var callBackUrl = window.location.origin + '/boku-test' + '/result.html?paymentId=1&type=boku';
 
         function onHandlerClick() {
-            if (window.opener) {
-                console.info("attempt to close parent window");
-                var handledCallBack = handleCallbackUrl(callBackUrl);
-                if (handledCallBack) {
-                    console.info("Parent window closed, closing Current Window now");
-                    window.close();
-                    return;
-                }
-            }
+//            if (window.opener) {
+//                console.info("attempt to close parent window");
+//                var handledCallBack = handleCallbackUrl(callBackUrl);
+//                if (handledCallBack) {
+//                    console.info("Parent window closed, closing Current Window now");
+//                    window.close();
+//                    return;
+//                }
+//            }
             console.info("no parent window or parent window could not be closed, redirecting current window");
             window.location.href = callBackUrl;
         }
