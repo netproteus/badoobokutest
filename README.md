@@ -5,7 +5,7 @@ This mocks up a payment integration between badoo and boku and what happens on t
 The code in boku.html closely follows the actual code used for this step in https://buy2.boku.com/ui/static/1.33.0/scripts/checkout.js
 and where the problem is located
 
-You can see a live example here http://netproteus.com/boku-test
+You can see a live example here http://netproteus.com/boku-test/badoo.html
 
 And two possible solutions in order of preference
 
