@@ -12,5 +12,5 @@ And two possible solutions in order of preference
 1. Stop trying to do anything with window.opener.location, redirecting our parent page is never what we want.
 https://github.com/netproteus/badoobokutest/pull/1
 
-2. Tell us how to configure the orgrl controller parameter so your code will actually post a message to our parent (this will require hacking on our part and we would definitely prefer you just redirected the popup window to the url we asked you to.
+2. Tell us how to configure the orgrl controller parameter so your code will actually post a message to our parent (this will require hacking on our part and we would definitely prefer you just redirected the popup window to the url we asked you to.)
 https://github.com/netproteus/badoobokutest/pull/2
